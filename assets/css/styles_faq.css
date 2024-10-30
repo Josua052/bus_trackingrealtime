@@ -1,0 +1,552 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+nav {
+    background-color: #157130;
+    /* Warna latar belakang navbar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Styling Logo */
+
+.logo-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.center-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.center-nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.center-nav h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    /* Mencegah teks turun ke baris berikutnya */
+}
+
+.center-nav .location-linus-btn {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 2px;
+    background-color: transparent;
+    border-radius: 0;
+    transition: background-color 0.3s;
+}
+
+.location-linus-btn img {
+    max-width: 45px;
+    animation: moveLogo 2s infinite ease-in-out;
+}
+
+.location-linus-btn:hover img {
+    animation: moveLogo 1s infinite ease-in-out;
+}
+
+@keyframes moveLogo {
+    0% {
+        transform: translateX(0);
+        /* Posisi awal */
+    }
+    50% {
+        transform: translateX(5px);
+        /* Bergerak ke kanan */
+    }
+    100% {
+        transform: translateX(0);
+        /* Kembali ke posisi awal */
+    }
+}
+
+
+/* Hamburger Menu */
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 50%;
+    /* Posisi vertikal di tengah */
+    right: 20px;
+    /* Pojok kanan atas */
+    transform: translateY(-50%);
+    /* Sejajarkan vertikal dengan elemen lain */
+}
+
+.hamburger:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    z-index: 1000;
+    height: 100%;
+    width: 0;
+    /* Width default 0 */
+    position: fixed;
+    top: 78px;
+    /* Adjust top to 0 for full height */
+    right: 0;
+    background-color: #070707b9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    /* Ini akan memastikan konten berada di atas, toggle di bawah */
+    height: 100%;
+    padding-bottom: 20px;
+    /* Tambahkan ruang untuk toggle */
+}
+
+.sidebar a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Didot', serif;
+    color: #ffffff;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a:hover {
+    color: #f0f0f0;
+    background-color: rgba(153, 143, 143, 0.219);
+}
+
+.sidebar .closebtn {
+    font-family: 'Didot', serif;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 36px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    width: 250px;
+    /* Adjust width when active */
+    z-index: 2000;
+    /* Ensure it is above other elements */
+}
+
+
+/* Dark mode for the entire body */
+
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/* Header in dark mode */
+
+body.dark-mode nav {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+
+/* Styling untuk dark mode khusus pada section FAQ */
+
+body.dark-mode .faq-section {
+    background-color: #1c1c1c;
+    /* Background hitam */
+    color: #ffffff;
+    /* Teks berwarna putih */
+}
+
+body.dark-mode .faq-section header {
+    background-color: #1c1c1c;
+    /* Dark background for header */
+}
+
+body.dark-mode .faq-section header h2 {
+    background-color: #1c1c1c;
+    /* Dark background for header */
+    color: #ffffff;
+}
+
+
+/* Gaya untuk kontainer FAQ */
+
+body.dark-mode .faq-container .faq-box {
+    background-color: #000000;
+    /* Kotak FAQ dengan warna lebih gelap */
+    border: 1px solid #333;
+    /* Border agar terlihat jelas */
+}
+
+
+/* Styling untuk summary (pertanyaan) dalam FAQ */
+
+body.dark-mode .faq-container .faq-box summary {
+    background-color: #000000;
+    color: #ffffff;
+    /* Teks pertanyaan berwarna putih */
+    cursor: pointer;
+}
+
+
+/* Styling untuk jawaban FAQ */
+
+body.dark-mode .faq-container .faq-box .faq-answer {
+    background-color: #000000;
+    color: #ffffff;
+    /* Teks jawaban berwarna lebih terang */
+}
+
+
+/* Styling untuk garis pemisah */
+
+body.dark-mode .faq-container .faq-divider {
+    background-color: #444;
+    /* Warna garis pemisah lebih gelap */
+}
+
+
+/* Garis pemisah dalam FAQ di dark mode */
+
+body.dark-mode .faq-divider {
+    border-color: #444;
+    /* Warna garis lebih gelap di dark mode */
+}
+
+
+/* Styling untuk form kotak saran dalam dark mode */
+
+body.dark-mode .saran-container {
+    background-color: #1a1a1a;
+    /* Background lebih gelap untuk kotak saran */
+    color: #ffffff;
+    /* Teks putih */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* Styling untuk input dan textarea di form kotak saran */
+
+body.dark-mode .saran-container input,
+body.dark-mode .saran-container textarea {
+    background-color: #333;
+    /* Background input/textarea lebih gelap */
+    color: #ffffff;
+    /* Teks putih */
+    border: 1px solid #555;
+    /* Border input/textarea */
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+/* Styling untuk tombol kirim di dark mode */
+
+body.dark-mode .saran-container button {
+    background-color: #089a5b;
+    /* Warna tombol */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Hover effect untuk tombol kirim */
+
+body.dark-mode .saran-container button:hover {
+    background-color: #066f4a;
+    /* Warna saat hover */
+}
+
+
+/* Rest of your CSS */
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+/* Toggle button container */
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+
+/* Hide the default checkbox */
+
+#darkModeToggle {
+    display: none;
+}
+
+
+/* Toggle switch styling */
+
+.toggle-label {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* Moving ball inside the toggle */
+
+.toggle-ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+
+/* Icon styling */
+
+.sun-icon,
+.moon-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.sun-icon {
+    left: 10px;
+}
+
+.moon-icon {
+    right: 10px;
+}
+
+
+/* Dark mode enabled */
+
+#darkModeToggle:checked+.toggle-label {
+    background-color: #4d4d4d;
+}
+
+
+/* Move the ball to the right when dark mode is enabled */
+
+#darkModeToggle:checked+.toggle-label .toggle-ball {
+    transform: translateX(30px);
+}
+
+
+/* FAQ Section */
+
+.faq-section {
+    width: 80%;
+    max-width: 800px;
+    margin: 130px auto;
+    background-color: white;
+    /* Warna latar belakang FAQ menjadi putih */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section header {
+    background-color: white;
+    /* Latar belakang judul tetap putih */
+    padding: 10px;
+    /* Tambahan padding untuk estetika */
+    border-radius: 8px;
+}
+
+.faq-section header h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+/* FAQ Container */
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* FAQ Box */
+
+.faq-box {
+    border: none;
+    /* Menghapus garis batas */
+}
+
+
+/* FAQ Question */
+
+.faq-question {
+    font-size: 15px;
+    background-color: #f5f5f5;
+    /* Warna pertanyaan mengikuti warna latar belakang halaman */
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    border: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+    /* Menyusun konten secara vertikal */
+}
+
+.faq-answer {
+    margin: 10px;
+    font-size: 15px;
+    padding: 15px;
+    background-color: white;
+    /* Warna putih untuk jawaban */
+    letter-spacing: 0.5px;
+}
+
+
+/* Garis Pemisah */
+
+.faq-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    /* Garis pemisah */
+}
+
+
+/* Tanda Panah */
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .faq-section {
+        width: 90%;
+    }
+}
+
+
+/* Kotak Saran */
+
+.saran-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.saran-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.saran-container input[type="text"],
+.saran-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.saran-container textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    resize: none;
+}
+
+.saran-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #089A5b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.saran-container button:hover {
+    background-color: #077b4c;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .saran-container {
+        width: 90%;
+    }
+}
